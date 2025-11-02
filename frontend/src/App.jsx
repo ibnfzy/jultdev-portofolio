@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer.jsx';
 import Navbar from './components/Navbar.jsx';
+import ProjectDetail from './pages/ProjectDetail.jsx';
+import Projects from './pages/Projects.jsx';
 import Home from './pages/Home.jsx';
 
 const pages = [
@@ -32,6 +34,8 @@ export default function App() {
       <main className="flex flex-1 flex-col">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
           {pages.map((page) => (
             <Route key={page.path} path={page.path} element={<Page title={page.name} description={page.description} />} />
           ))}
