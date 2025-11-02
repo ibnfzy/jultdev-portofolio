@@ -1,13 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer.jsx';
 import Navbar from './components/Navbar.jsx';
+import Home from './pages/Home.jsx';
 
 const pages = [
-  {
-    path: '/',
-    name: 'Home',
-    description: 'Welcome to the Phase 1 frontend starter built with Vite, React, and TailwindCSS.',
-  },
   {
     path: '/about',
     name: 'About',
@@ -35,6 +31,7 @@ export default function App() {
       <Navbar />
       <main className="flex flex-1 flex-col">
         <Routes>
+          <Route path="/" element={<Home />} />
           {pages.map((page) => (
             <Route key={page.path} path={page.path} element={<Page title={page.name} description={page.description} />} />
           ))}
