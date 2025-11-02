@@ -68,6 +68,30 @@ frontend/
 
 `react-router-dom` powers client-side routing across basic pages (Home, About, Contact). `Navbar` and `Footer` wrap routed content, and a reusable `ThemeToggle` component interacts with the `ThemeContext` to switch between light and dark themes.
 
+## Home Page Experience
+
+The custom `Home` page (`src/pages/Home.jsx`) menampilkan tiga blok utama:
+
+- **Hero** dengan animasi mesin tik menggunakan [`react-simple-typewriter`](https://www.npmjs.com/package/react-simple-typewriter) serta CTA menuju halaman kontak.
+- **Highlight Teknologi** berupa grid responsif berisi teknologi favorit, masing-masing dengan animasi masuk dari [`framer-motion`](https://www.framer.com/motion/).
+- **Tentang Saya** yang memadukan ringkasan profil, daftar keahlian kunci, dan avatar bergaya kartu.
+
+Setiap section dibungkus `motion.section`/`motion.div` untuk memunculkan efek scroll reveal. Utility Tailwind mengatur layout agar tetap nyaman pada berbagai ukuran layar.
+
+### Kustomisasi
+
+1. **Ubah konten hero** dengan menyesuaikan teks, daftar kata `Typewriter`, serta tautan CTA di bagian awal komponen.
+2. **Modifikasi highlight teknologi** dengan mengubah array `techHighlights`. Tambahkan atau hapus item sesuai kebutuhan Anda.
+3. **Perbarui ringkasan profil** di section "Tentang Saya", termasuk avatar, poin-poin kekuatan, dan tautan ke halaman lain.
+
+Tambahkan dependensi animasi dengan menjalankan:
+
+```bash
+npm install
+```
+
+perintah tersebut akan mengunduh `framer-motion` dan `react-simple-typewriter` yang tercantum di `package.json`.
+
 ## Backend Integration
 
 If backend APIs are introduced, configure Vite's proxy in `vite.config.js`:
