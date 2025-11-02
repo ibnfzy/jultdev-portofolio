@@ -3,6 +3,7 @@ import Footer from './components/Footer.jsx';
 import Navbar from './components/Navbar.jsx';
 import ProjectDetail from './pages/ProjectDetail.jsx';
 import Projects from './pages/Projects.jsx';
+import Contact from './pages/Contact.jsx';
 import Home from './pages/Home.jsx';
 
 const pages = [
@@ -10,11 +11,6 @@ const pages = [
     path: '/about',
     name: 'About',
     description: 'Learn more about the project goals and the technology stack behind this portfolio.',
-  },
-  {
-    path: '/contact',
-    name: 'Contact',
-    description: 'Reach out if you have questions or want to collaborate on future phases.',
   },
 ];
 
@@ -39,6 +35,7 @@ export default function App() {
           {pages.map((page) => (
             <Route key={page.path} path={page.path} element={<Page title={page.name} description={page.description} />} />
           ))}
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />
