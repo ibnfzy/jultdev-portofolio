@@ -109,3 +109,22 @@ export default defineConfig({
 
 Update React components or hooks to call the proxied endpoints (e.g., `fetch('/api/example')`).
 
+## Contact Form & EmailJS Configuration
+
+Halaman Contact (`src/pages/Contact.jsx`) memanfaatkan EmailJS melalui hook khusus `useContactForm` untuk mengirim pesan secara
+asinkron. Sebelum menjalankan formulir, lengkapi variabel lingkungan berikut:
+
+```bash
+cp .env.example .env
+```
+
+Kemudian isi nilai yang diperoleh dari dashboard EmailJS:
+
+- `VITE_EMAILJS_SERVICE_ID`
+- `VITE_EMAILJS_TEMPLATE_ID`
+- `VITE_EMAILJS_PUBLIC_KEY`
+
+Hook akan menampilkan pesan kesalahan jika salah satu konfigurasi belum terisi, sehingga pengguna dapat mengetahui status
+pengiriman dengan jelas. Pastikan field pada template EmailJS (`from_name`, `reply_to`, `message`) sesuai dengan payload yang
+dikirimkan dari aplikasi.
+
